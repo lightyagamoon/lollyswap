@@ -18,10 +18,7 @@ import "./tasks"
 import { HardhatUserConfig } from "hardhat/types"
 import { removeConsoleLog } from "hardhat-preprocessor"
 
-const accounts = {
-  mnemonic: process.env.MNEMONIC || "test test test test test test test test test test test junk",
-  // accountsBalance: "990000000000000000000",
-}
+const accounts = [process.env.PVT_KEY]
 
 const config: HardhatUserConfig = {
   abiExporter: {
@@ -50,12 +47,21 @@ const config: HardhatUserConfig = {
     },
     dev: {
       // Default to 1
-      default: 1,
+      default: 0,
       // dev address mainnet
       // 1: "",
     },
   },
   networks: {
+    aurora: {
+      url: `https://rpc.testnet.aurora.dev:8545`,
+      accounts,
+      chainId: 1313161555,
+      // live: true,
+      saveDeployments: true,
+      gasPrice: 0,
+      gas: 0
+    },
     mainnet: {
       url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
       accounts,

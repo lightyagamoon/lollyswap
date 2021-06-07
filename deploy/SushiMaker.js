@@ -11,15 +11,7 @@ module.exports = async function ({ ethers: { getNamedSigner }, getNamedAccounts,
   const bar = await ethers.getContract("SushiBar")
   const sushi = await ethers.getContract("SushiToken")
   
-  let wethAddress;
-  
-  if (chainId === '31337') {
-    wethAddress = (await deployments.get("WETH9Mock")).address
-  } else if (chainId in WETH) {
-    wethAddress = WETH[chainId].address
-  } else {
-    throw Error("No WETH!")
-  }
+  let wethAddress = "0x86aa4e9127972a825167b79F0411F7B324957DdA";
 
   await deploy("SushiMaker", {
     from: deployer,

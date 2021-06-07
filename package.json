@@ -29,6 +29,7 @@
     "build": "hardhat compile",
     "console": "hardhat console",
     "testnet:deploy": "yarn ropsten:deploy && yarn rinkeby:deploy && yarn goerli:deploy && yarn kovan:deploy && yarn moonbase:deploy && yarn arbitrum:deploy",
+    "aurora:deploy": "hardhat --network aurora deploy",
     "mainnet:deploy": "hardhat --network mainnet deploy",
     "mainnet:verify": "hardhat --network mainnet etherscan-verify --solc-input",
     "mainnet:export": "hardhat --network mainnet export --export exports/mainnet.json",
