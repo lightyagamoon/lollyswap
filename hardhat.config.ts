@@ -54,13 +54,12 @@ const config: HardhatUserConfig = {
   },
   networks: {
     aurora: {
-      url: `https://rpc.testnet.aurora.dev:8545`,
+      url: "https://testnet.aurora.dev",
       accounts,
       chainId: 1313161555,
       // live: true,
       saveDeployments: true,
-      gasPrice: 0,
-      gas: 0
+      gasPrice: 120 * 1000000000
     },
     mainnet: {
       url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
