@@ -54,7 +54,7 @@ const config: HardhatUserConfig = {
   },
   networks: {
     aurora: {
-      url: "http://localhost:8545",
+      url: "https://testnet.aurora.dev",
       accounts,
       chainId: 1313161555,
       // live: true,
